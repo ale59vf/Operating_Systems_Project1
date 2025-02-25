@@ -22,12 +22,9 @@ namespace ProjectA
         }
 
         // deposit function 
-        public void Deposit(float depositAmount){
-            if (balance >= depositAmount){
-                balance -= depositAmount;
-                Console.WriteLine($"Withdrawn {depositAmount}, Remaining Balance: {balance}");
-            }
-            else{Console.WriteLine("Insufficient funds.");}
+        public void Deposit(float depositAmount) { 
+            balance += depositAmount;
+            Console.WriteLine($"Withdrawn {depositAmount}, Remaining Balance: {balance}");
         }
 
         // withdraw function
