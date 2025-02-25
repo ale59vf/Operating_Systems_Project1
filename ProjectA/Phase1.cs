@@ -30,8 +30,8 @@ namespace ProjectA.Phases
             t2.Join();
             t3.Join();
 
-            // print completion statement 
-            Console.WriteLine("Phase 1 is complete!");
+            // print completion statement
+            Console.WriteLine($"Final account balance: {newAccount.getBalance():C}");
         }
 
     }
