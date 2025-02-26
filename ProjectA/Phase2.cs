@@ -10,7 +10,7 @@ namespace ProjectA.Phases
     internal class Phase2
     { 
         // create a function to run
-        public static void Run() {
+        public void Run() {
             // create new object bank account with $1000
             bankAccount newAccount = new bankAccount(1000); // Initial balance $500
 
