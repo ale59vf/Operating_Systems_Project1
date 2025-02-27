@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectA
+namespace Project1
 {
     internal class deadlockResolution_BankAccount
     {

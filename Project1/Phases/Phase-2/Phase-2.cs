@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectA.Phases
+namespace Project1.Phases
 {
     // Phase 2: Resource Protection
     internal class Phase2
