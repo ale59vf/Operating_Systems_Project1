@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project1.Phases
+namespace ProjectA.Phases
 {
     // Phase 4: Deadlock Resolution
     internal class Phase4
