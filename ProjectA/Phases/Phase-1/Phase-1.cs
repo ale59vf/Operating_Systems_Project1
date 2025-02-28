@@ -18,7 +18,7 @@ namespace ProjectA.Phases
             // create three threads 
             Thread t1 = new Thread(() => newAccount.Deposit(500); { Name = "Thread 1" };
             Thread t2 = new Thread(() => newAccount.Withdraw(1500); { Name = "Thread 2" };
-                Thread t3 = new Thread(() => newAccount.Deposit(20); { Name = "Thread 3" };
+            Thread t3 = new Thread(() => newAccount.Deposit(20); { Name = "Thread 3" };
 
             // start threads 
             t1.Start();
