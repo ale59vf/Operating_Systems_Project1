@@ -17,13 +17,16 @@ namespace ProjectA.Phases
             // create three threads
             Thread t1 = new Thread(() => newAccount.Withdraw(500)) { Name = "Thread 1" };
             Thread t2 = new Thread(() => newAccount.Deposit(100)) { Name = "Thread 2" };
+            Thread t3 = new Thread(() => newAccount.Withdraw(20); { Name = "Thread 3" };
             // start threads
             t1.Start();
             t2.Start();
+            t3.Start();
 
             // join the threads
             t1.Join();
             t2.Join();
+            t3.Join();
 
             // print completion statement
             Console.WriteLine($"Final account balance: {newAccount.getBalance():C}");
