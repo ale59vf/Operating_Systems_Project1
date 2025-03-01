@@ -11,14 +11,21 @@ namespace ProjectB
     {
         // This class simulates a producer that writes messages to a pipe
 
-        public void Produce(StreamWriter writer)
+        public void producer(StreamWriter writer)
         {
-            if (writer.BaseStream.CanWrite)
+            try
             {
-                Console.WriteLine("[Producer] Sending messages...");
-                writer.WriteLine("Data 1 from Producer");
-                writer.WriteLine("Data 2 from Producer");
-                writer.WriteLine("exit"); // End signal
+                if (writer.BaseStream.CanWrite)
+                {
+                    Console.WriteLine("[Producer] Sending messages...");
+                    var data = new { Id = 1, Message = "Structured Data" };
+                    writer.WriteLine(JsonSerializer.Serialize(data));
+                    writer.WriteLine("exit"); // End signal
+                }
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine($"[Producer] Error: {ex.Message}"); // Error Handling Test
             }
         }
     }
