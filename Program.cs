@@ -24,8 +24,18 @@ internal class Program
                 if (writer.BaseStream.CanWrite)
                 {
                     Console.WriteLine("[Producer] Sending messages to Consumer...");
-                    writer.WriteLine("Message 1 from Producer"); // Send message to Consumer
-                    writer.WriteLine("Message 2 from Producer"); // Send another message
+                    
+                    // Data Integrity Test: Sending JSON formatted data
+                    var data = new { Id = 1, Message = "Hello from Producer" };
+                    string jsonData = JsonSerializer.Serialize(data);
+                    writer.WriteLine(jsonData);
+
+                    // Performance Benchmarking: Measuring time to send a large file
+                    var stopwatch = Stopwatch.StartNew();
+                    writer.WriteLine(File.ReadAllText("largefile.txt"));
+                    stopwatch.Stop();
+                    Console.WriteLine($"[Producer] Time taken to send data: {stopwatch.ElapsedMilliseconds} ms");
+                    
                     writer.WriteLine("exit"); // Signal Consumer to exit
                 }
             }
@@ -39,6 +49,5 @@ internal class Program
 
             consumer.WaitForExit(); // Wait for Consumer process to finish
         }
-        
     }
 }
